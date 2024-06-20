@@ -12,6 +12,11 @@ export class User {
     return todayYear - this.birthday.getFullYear();
   }
 
+  set age(age: number) {
+    let todayYear = new Date().getFullYear();
+    this.birthday = new Date(todayYear - age, this.birthday.getMonth(), this.birthday.getDate());
+  }
+
 }
 
 //   Object.defineProperty(this, "age", {
